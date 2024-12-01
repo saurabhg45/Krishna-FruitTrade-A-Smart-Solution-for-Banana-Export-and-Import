@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const Features = () => {
   const features = [
-    'Instant purchasing and order placement',
-    'Container tracking and shipment updates',
-    'Multi-currency support for global buyers',
-    'Real-time price trends and insights',
-    'Local language support for farmers'
+    "Instant purchasing and order placement",
+    "Container tracking and shipment updates",
+    "Multi-currency support for global buyers",
+    "Real-time price trends and insights",
+    "Local language support for farmers",
   ];
 
   return (

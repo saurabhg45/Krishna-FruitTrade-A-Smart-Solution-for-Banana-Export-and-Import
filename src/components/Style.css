@@ -1,0 +1,336 @@
+/* Registration */
+.asking-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+.asking-page h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.asking-page p {
+  font-size: 18px;
+  color: #34495e;
+  margin-bottom: 30px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+}
+
+.action-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #2980b9;
+}
+
+.signup-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: #27ae60;
+}
+
+
+/* LoginPage.css */
+.login-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.dummy-credentials {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.dummy-credentials code {
+  background: #eee;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+
+/* signup */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+/* Container for the Form */
+.signup-form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.7); /* Lowered opacity for the form container */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e6e6e6;
+  position: relative;
+  z-index: 1; /* Keeps the form content above the background */
+}
+
+/* Header */
+.signup-form-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #3498db;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+/* Button Styling */
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #2c81ba;
+  box-shadow: 0 4px 8px rgba(44, 129, 186, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-form-container {
+    padding: 20px;
+  }
+
+  .signup-button {
+    font-size: 16px;
+  }
+}
+
+/* Success/Alert Colors */
+input:valid {
+  border-color: #27ae60;
+}
+
+input:invalid {
+  border-color: #e74c3c;
+}
+
+/* Additional Styling for Conditional Fields */
+.conditional-fields {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Admin Header */
+
+#adminNavbar{
+  margin-left: 300px;
+}
+
+/* Add banana */
+
+
+/* AddBanana.css */
+
+.add-banana-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-banana-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+button.submit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button.submit-button:hover {
+  background-color: #218838;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
