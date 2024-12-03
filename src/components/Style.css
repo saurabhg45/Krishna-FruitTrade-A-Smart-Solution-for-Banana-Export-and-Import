@@ -41,6 +41,11 @@
   background-color: #3498db;
   color: white;
 }
+.dropdown-item,
+.dropdown {
+  background-color: #3498db;
+  color: white;
+}
 
 .login-button:hover {
   background-color: #2980b9;
@@ -54,7 +59,6 @@
 .signup-button:hover {
   background-color: #27ae60;
 }
-
 
 /* LoginPage.css */
 .login-page {
@@ -93,7 +97,7 @@ input {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -117,7 +121,7 @@ button:hover {
 }
 
 .signup-link a {
-  color: #007BFF;
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -139,7 +143,6 @@ button:hover {
   border-radius: 3px;
 }
 
-
 /* signup */
 
 /* General Reset */
@@ -155,7 +158,12 @@ button:hover {
   max-width: 500px;
   margin: 50px auto;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.7); /* Lowered opacity for the form container */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Lowered opacity for the form container */
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e6e6e6;
@@ -261,12 +269,11 @@ input:invalid {
 
 /* Admin Header */
 
-#adminNavbar{
+#adminNavbar {
   margin-left: 300px;
 }
 
 /* Add banana */
-
 
 /* AddBanana.css */
 
@@ -333,4 +340,3 @@ button:disabled {
   background-color: #6c757d;
   cursor: not-allowed;
 }
-

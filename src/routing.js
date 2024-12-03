@@ -54,7 +54,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/admin", 
-        element: <AdminDashboard />,
+        element: <AdminDashboard />,  
       },
       {
         path: "/admin/banana-management/list", 

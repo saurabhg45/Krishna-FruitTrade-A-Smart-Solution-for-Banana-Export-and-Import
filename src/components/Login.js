@@ -18,12 +18,54 @@ export default function Login() {
     }
   };
 
+  const [selectedOption, setSelectedOption] = useState("Login Option");
+
+  const handleSelect = (option) => {
+    setSelectedOption(option);
+  };
+
   return (
     <div className="login-page">
       <h2>Login to Your Account</h2>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
-     
+
       <form onSubmit={handleLogin} className="login-form">
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle dropdown"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {selectedOption}
+          </button>
+          <ul className="dropdown-menu dropdown-menu-dark">
+            <li>
+              <button
+                className="dropdown-item"
+                onClick={() => handleSelect("Admin")}
+              >
+                Admin
+              </button>
+            </li>
+            <li>
+              <button
+                className="dropdown-item"
+                onClick={() => handleSelect("Farmer")}
+              >
+                Farmer
+              </button>
+            </li>
+            <li>
+              <button
+                className="dropdown-item"
+                onClick={() => handleSelect("Buyer")}
+              >
+                Buyer
+              </button>
+            </li>
+          </ul>
+        </div>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -46,9 +88,13 @@ export default function Login() {
             required
           />
         </div>
-        <button type="submit" className="login-button">Login</button>
+        <button type="submit" className="login-button">
+          Login
+        </button>
         <div className="signup-link">
-          <p>Don't have an account? <a href="/signup">Sign up</a></p>
+          <p>
+            Don't have an account? <a to="/signup">Sign up</a>
+          </p>
         </div>
       </form>
     </div>
