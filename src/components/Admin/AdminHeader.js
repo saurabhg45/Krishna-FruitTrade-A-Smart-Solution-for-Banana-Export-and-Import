@@ -37,14 +37,12 @@ const AdminHeader = () => {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             {/* Dashboard Menu */}
             <li className="nav-item dropdown">
-              <Link
-                to="/admin/dashboard"
-                className="nav-link dropdown-toggle"
-                id="dashboardDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+            <Link
+                  to="/admin/dashboard"
+                  className="nav-link dropdown-toggle"
+                  id="dashboardDropdown"
+                  role="button"
+            >
                 Dashboard
               </Link>
               <ul className="dropdown-menu" aria-labelledby="dashboardDropdown">

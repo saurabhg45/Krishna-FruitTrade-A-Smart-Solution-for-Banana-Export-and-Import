@@ -12,6 +12,8 @@ import Admin from "./components/Admin/Admin";
 import AdminDashboard from "./components/Admin/AdminDashboard";
 import BananaList from "./components/Admin/BananaManagement/BananaList";
 import AddBanana from "./components/Admin/BananaManagement/AddBanana";
+import Buyer from "./components/Buyer/Buyer";
+
 
 const router = createBrowserRouter([
   {
@@ -66,6 +68,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:"/buyer",
+    element: <Buyer/>
+  }
 ]);
 
 export default router;

@@ -11,137 +11,146 @@ const Signup = () => {
     location: "",
   });
 
-  // Handle form field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle role selection
   const handleRoleChange = (e) => {
     setRole(e.target.value);
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData, "Role:", role);
     alert(`Signup successful for ${role}`);
-    // Add logic to send data to your backend API
   };
 
   return (
-    <div className="signup-form-container">
-      <h1>Signup Form</h1>
-      <form onSubmit={handleSubmit}>
-        {/* Name */}
-        <div className="form-group">
-          <label htmlFor="name">Full Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Email */}
-        <div className="form-group">
-          <label htmlFor="email">Email Address:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Password */}
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Phone */}
-        <div className="form-group">
-          <label htmlFor="phone">Phone Number:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Location */}
-        <div className="form-group">
-          <label htmlFor="location">Location:</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Role Selection */}
-        <div className="form-group">
-          <label htmlFor="role">I am a:</label>
-          <select id="role" value={role} onChange={handleRoleChange} required>
-            <option value="">Select Role</option>
-            <option value="Farmer">Farmer</option>
-            <option value="Buyer">Buyer</option>
-          </select>
-        </div>
-
-        {/* Conditional Fields for Farmer */}
-        {role === "Farmer" && (
+    <div className="signup-page">
+      <div className="signup-form-container">
+        <h1>Create Your Account</h1>
+        <form onSubmit={handleSubmit}>
+          {/* Full Name */}
           <div className="form-group">
-            <label htmlFor="farmSize">Farm Size (in acres):</label>
-            <input
-              type="number"
-              id="farmSize"
-              name="farmSize"
-              onChange={handleChange}
-              required
-            />
-          </div>
-        )}
-
-        {/* Conditional Fields for Buyer */}
-        {role === "Buyer" && (
-          <div className="form-group">
-            <label htmlFor="companyName">Company Name:</label>
+            <label htmlFor="name">Full Name</label>
             <input
               type="text"
-              id="companyName"
-              name="companyName"
+              id="name"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
+              placeholder="Enter your full name"
               required
             />
           </div>
-        )}
 
-        {/* Submit Button */}
-        <button type="submit" className="signup-button">
-          Signup
-        </button>
-      </form>
+          {/* Email */}
+          <div className="form-group">
+            <label htmlFor="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          {/* Password */}
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter a strong password"
+              required
+            />
+          </div>
+
+          {/* Phone */}
+          <div className="form-group">
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          {/* Location */}
+          <div className="form-group">
+            <label htmlFor="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="Enter your location"
+              required
+            />
+          </div>
+
+          {/* Role Selection */}
+          <div className="form-group">
+            <label htmlFor="role">I am a:</label>
+            <select
+              id="role"
+              value={role}
+              onChange={handleRoleChange}
+              required
+            >
+              <option value="">Select Role</option>
+              <option value="Farmer">Farmer</option>
+              <option value="Buyer">Buyer</option>
+            </select>
+          </div>
+
+          {/* Conditional Fields */}
+          {role === "Farmer" && (
+            <div className="form-group">
+              <label htmlFor="farmSize">Farm Size (in acres)</label>
+              <input
+                type="number"
+                id="farmSize"
+                name="farmSize"
+                placeholder="Enter your farm size"
+                onChange={handleChange}
+                required
+              />
+            </div>
+          )}
+
+          {role === "Buyer" && (
+            <div className="form-group">
+              <label htmlFor="companyName">Company Name</label>
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                placeholder="Enter your company name"
+                onChange={handleChange}
+                required
+              />
+            </div>
+          )}
+
+          {/* Submit Button */}
+          <button type="submit" className="signup-button">
+            Sign Up
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
