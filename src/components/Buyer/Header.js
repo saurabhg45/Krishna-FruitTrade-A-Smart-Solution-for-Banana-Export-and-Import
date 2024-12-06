@@ -11,62 +11,67 @@ const Header = () => {
 
   return (
     <header className="header">
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Fresh Horizon
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/buyer-dashboard">
-                Dashboard
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/product-catalog">
-                Product Catalog
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/order-tracking">
-                Order Tracking
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/order-history">
-                Order History
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/payment-management">
-                Payments
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/support-tickets">
-                Support
-              </Link>
-            </li>
-            {/* Logout Button */}
-            <div className="d-flex">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
+            Fresh Horizon
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/buyer-dashboard">
+                  Dashboard
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/product-catalog">
+                  Product Catalog
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/order-tracking">
+                  Order Tracking
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/order-history">
+                  Order History
+                </Link>
+              </li>              
+              <li className="nav-item">
+                <Link className="nav-link" to="/payment-management">
+                  Payment
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/communication-with-admin">
+                  Communication With Admin
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/support-tickets">
+                  Support
+                </Link>
+              </li>
+              {/* Logout Button */}
+              <div className="d-flex">
                 <button className="btn btn-outline-light" onClick={Logout}>
                   Logout
                 </button>
               </div>
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
   );
 };
 
