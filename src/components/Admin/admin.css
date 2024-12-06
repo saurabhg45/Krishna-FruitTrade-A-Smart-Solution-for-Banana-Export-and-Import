@@ -1,0 +1,24 @@
+.sidebar {
+  width: 180px; /* Reduced width */
+  min-height: 100vh;
+  background-color: #343a40; /* Dark theme for professional look */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 200px; /* Slightly expand on hover for better usability */
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 14px; /* Adjusted font size */
+}
+
+.sidebar a:hover {
+  background-color: #495057; /* Subtle hover effect */
+  border-radius: 4px; /* Smooth edges */
+}
