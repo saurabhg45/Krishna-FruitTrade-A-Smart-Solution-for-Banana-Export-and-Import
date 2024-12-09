@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Admin/admin.css";
 
-const AdminLayout = () => {
+
+export default function AdminHeader() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const navigate = useNavigate();
 
@@ -11,21 +12,16 @@ const AdminLayout = () => {
   };
 
   const Logout = () => {
+    // Logout logic (e.g., clearing session storage or cookies)
     navigate("/login");
   };
 
   return (
     <div
-      className={`admin-layout d-flex ${
-        isSidebarOpen ? "sidebar-open" : "sidebar-closed"
-      }`}
+      className={`admin-layout d-flex ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}
     >
       {/* Sidebar */}
-      <aside
-        className={`sidebar bg-dark text-white p-3 ${
-          isSidebarOpen ? "d-block" : "d-none"
-        }`}
-      >
+      <aside className={`sidebar bg-dark text-white p-3 ${isSidebarOpen ? "d-block" : "d-none"}`}>
         <div className="sidebar-header mb-4">
           <h2>Fresh Horizons</h2>
         </div>
@@ -70,12 +66,18 @@ const AdminLayout = () => {
               Fresh Horizons
             </Link>
             <div className="d-flex ms-auto">
-              <button
-                className="btn btn-outline-light me-2"
-                onClick={() => navigate("/profile")}
-              >
-                Profile
-              </button>
+              <Link to="/home" className="btn btn-outline-light me-2">
+                Home
+              </Link>
+              <Link to="/about-us" className="btn btn-outline-light me-2">
+                About Us
+              </Link>
+              <Link to="/services" className="btn btn-outline-light me-2">
+                Services
+              </Link>
+              <Link to="/customer-feedback" className="btn btn-outline-light me-2">
+                Customer Feedback
+              </Link>
               <button className="btn btn-outline-light" onClick={Logout}>
                 Logout
               </button>
@@ -91,6 +93,5 @@ const AdminLayout = () => {
       </div>
     </div>
   );
-};
+}
 
-export default AdminLayout;

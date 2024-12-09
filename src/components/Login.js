@@ -3,15 +3,21 @@ import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 export default function Login() {
-  const [email, setEmail] = useState(""); // Pre-filled email
-  const [password, setPassword] = useState(""); // Pre-filled password
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword] = useState(""); 
   const [errorMessage, setErrorMessage] = useState("");
-  const [selectedOption, setSelectedOption] = useState("Login Option");
-  const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown visibility
+  const [selectedOption, setSelectedOption] = useState("Who are you?");
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
+  const [termsAccepted, setTermsAccepted] = useState(false); 
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    if (!termsAccepted) {
+      setErrorMessage("You must accept the terms and conditions.");
+      return;
+    }
 
     if (selectedOption === "Admin" && email === "admin@gmail.com" && password === "admin") {
       navigate("/admin");
@@ -24,63 +30,37 @@ export default function Login() {
     }
   };
 
-  const handleSelect = (option) => {
-    setSelectedOption(option);
-    setDropdownOpen(false); // Close dropdown after selection
+  const selectRole = (role) => {
+    setSelectedOption(role);
+    setDropdownOpen(false);
   };
 
   return (
     <div className="login-page">
-      <h2 className="login-title">Login to Your Account</h2>
       <div className="login-container">
+        <h2>Login</h2>
         <form onSubmit={handleLogin} className="form-container">
           <div className="dropdown">
             <button
-              className="btn btn-secondary"
+              className="dropdown-button"
               type="button"
-              onClick={() => setDropdownOpen(!dropdownOpen)} // Toggle dropdown visibility
+              onClick={() => setDropdownOpen(!dropdownOpen)}
             >
               {selectedOption}
             </button>
             {dropdownOpen && (
-              <ul className="dropdown-menu">
-                <li>
-                  <button
-                    type="button"
-                    className="dropdown-item"
-                    onClick={() => handleSelect("Admin")}
-                  >
-                    Admin
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="dropdown-item"
-                    onClick={() => handleSelect("Farmer")}
-                  >
-                    Farmer
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="dropdown-item"
-                    onClick={() => handleSelect("Buyer")}
-                  >
-                    Buyer
-                  </button>
-                </li>
-              </ul>
+              <div className="dropdown-options">
+                <div onClick={() => selectRole("Admin")}>Admin</div>
+                <div onClick={() => selectRole("Farmer")}>Farmer</div>
+                <div onClick={() => selectRole("Buyer")}>Buyer</div>
+              </div>
             )}
           </div>
-
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Enter Email</label>
             <input
               type="email"
               id="email"
-              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
@@ -88,27 +68,27 @@ export default function Login() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Enter Password</label>
             <input
               type="password"
               id="password"
-              name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
             />
           </div>
-
-          <button type="submit" className="login-button">
-            Login
-          </button>
-
-          <div className="signup-link">
-            <p>
-              Don't have an account? <a href="/signup">Sign up</a>
-            </p>
+          <div className="form-group checkbox-group">
+            <input
+              type="checkbox"
+              id="terms"
+              checked={termsAccepted}
+              onChange={(e) => setTermsAccepted(e.target.checked)}
+            />
+            <label htmlFor="terms">I agree to the terms and conditions</label>
           </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <button type="submit" className="login-button">Login</button>
         </form>
       </div>
     </div>

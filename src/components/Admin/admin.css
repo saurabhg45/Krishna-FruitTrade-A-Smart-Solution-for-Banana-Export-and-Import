@@ -1,24 +1,86 @@
+/* Admin Layout Styles */
+.admin-layout {
+  display: flex;
+  height: 100vh;
+}
+
 .sidebar {
-  width: 180px; /* Reduced width */
-  min-height: 100vh;
-  background-color: #343a40; /* Dark theme for professional look */
-  transition: all 0.3s ease;
-  overflow: hidden;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #343a40;
+  color: white;
+  transition: transform 0.3s ease-in-out;
 }
 
-.sidebar:hover {
-  width: 200px; /* Slightly expand on hover for better usability */
+.sidebar-header h2 {
+  color: white;
+  margin-bottom: 30px;
 }
 
-.sidebar a {
-  display: block;
-  color: #fff;
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  color: white;
   text-decoration: none;
-  padding: 10px 20px;
-  font-size: 14px; /* Adjusted font size */
+  font-size: 16px;
 }
 
-.sidebar a:hover {
-  background-color: #495057; /* Subtle hover effect */
-  border-radius: 4px; /* Smooth edges */
+.nav-link:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.content {
+  margin-left: 250px;
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.navbar {
+  background-color: #343a40;
+  padding: 15px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar .btn {
+  color: white;
+  border: 1px solid transparent;
+  margin-left: 15px;
+}
+
+.navbar .btn:hover {
+  background-color: #495057;
+}
+
+.btn-outline-light {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-outline-light:hover {
+  background-color: #495057;
+  border-color: #495057;
+}
+
+.sidebar-closed {
+  transform: translateX(-100%);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
 }

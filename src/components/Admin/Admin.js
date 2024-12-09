@@ -1,14 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "../Footer";
 import AdminHeader from "./AdminHeader";
-import AdminFooter from "./AdminFooter";
+
 
 export default function Admin() {
   return (
     <>
       <AdminHeader/>
       <Outlet/>
-      <AdminFooter/>
+      <Footer/>
     </>
   );
 }

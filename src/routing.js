@@ -13,7 +13,7 @@ import AdminDashboard from "./components/Admin/AdminDashboard";
 import BananaList from "./components/Admin/BananaManagement/BananaList";
 import AddBanana from "./components/Admin/BananaManagement/AddBanana";
 import Buyer from "./components/Buyer/Buyer";
-import ProductCatalog from "./components/ProductCatalog/ProductCatalog";
+// import ProductCatalog from "./components/ProductCatalog/ProductCatalog";
 
 const router = createBrowserRouter([
   {
@@ -72,30 +72,30 @@ const router = createBrowserRouter([
     path: "/buyer",
     element: <Buyer />,
     children: [
-      {
-        path: "/product-catalog",
-        element: <ProductCatalog />,
-      },
-      {
-        path: "/order-tracking",
-        element: <ProductCatalog />,
-      },
-      {
-        path: "/order-history",
-        element: <ProductCatalog />,
-      },
-      {
-        path: "",
-        element: <ProductCatalog />,
-      },
-      {
-        path: "/order-history",
-        element: <ProductCatalog />,
-      },
-      {
-        path: "/payment-management",
-        element: <ProductCatalog />,
-      },
+      // {
+      //   path: "/product-catalog",
+      //   element: <ProductCatalog />,
+      // },
+      // {
+      //   path: "/order-tracking",
+      //   element: <ProductCatalog />,
+      // },
+      // {
+      //   path: "/order-history",
+      //   element: <ProductCatalog />,
+      // },
+      // {
+      //   path: "",
+      //   element: <ProductCatalog />,
+      // },
+      // {
+      //   path: "/order-history",
+      //   element: <ProductCatalog />,
+      // },
+      // {
+      //   path: "/payment-management",
+      //   element: <ProductCatalog />,
+      // },
     ],
   },
 ]);
