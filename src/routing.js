@@ -10,9 +10,9 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Admin from "./components/Admin/Admin";
 import AdminDashboard from "./components/Admin/AdminDashboard";
-import BananaList from "./components/Admin/BananaManagement/BananaList";
-import AddBanana from "./components/Admin/BananaManagement/AddBanana";
 import Buyer from "./components/Buyer/Buyer";
+import ProductUpload from "./components/Admin/Products/ProductUpload";
+import ProductList from "./components/Admin/Products/ProductList";
 // import ProductCatalog from "./components/ProductCatalog/ProductCatalog";
 
 const router = createBrowserRouter([
@@ -55,17 +55,18 @@ const router = createBrowserRouter([
     element: <Admin />, // Admin layout
     children: [
       {
-        path: "/admin",
+        path: "",
         element: <AdminDashboard />,
       },
       {
-        path: "/admin/banana-management/list",
-        element: <BananaList />,
+        path: "P-upload",
+        element: <ProductUpload />,
       },
       {
-        path: "/admin/banana-management/add",
-        element: <AddBanana />,
+        path: "P-list",
+        element: <ProductList />,
       },
+     
     ],
   },
   {
