@@ -19,8 +19,8 @@ import {
       icon: Box,
       submenu: [
         { title: 'Product List', path: '/products' },
-        { title: 'Product View', path: '/products/view' },
-        { title: 'Product Add', path: '/products/add' }
+        { title: 'Product View', path: '/product-view' },
+        { title: 'Product Add', path: '/product-add' }
       ]
     },
     {

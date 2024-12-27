@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import AdminHeader from '../Admin/AdminHeader'; 
-import { Sidebar } from '../Admin/Sidebar';
+import AdminHeader from '../Admin/AdminHeader';
+import  Sidebar  from '../Admin/Sidebar';
 import { DashboardStats } from '../Admin/DashboardStats';
 import { ThemeProvider } from '../Admin/ThemeToggle';
-// import { Footer } from '../Footer';
+import ProductList from '../Admin/Products/ProductList';
+import ProductAdd from '../Admin/Products/ProductAdd';
+import ProductView from '../Admin/Products/ProductView'
 
 function Admin() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [currentView, setCurrentView] = useState('/');
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,6 +29,19 @@ function Admin() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const renderContent = () => {
+    switch (currentView) {
+      case '/products':
+        return <ProductList />;
+      case '/product-add':
+        return <ProductAdd />;
+      case '/product-view':
+        return <ProductView />;
+      default:
+        return <DashboardStats />;
+    }
+  };
+
   return (
     <ThemeProvider>
       <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
@@ -38,34 +54,28 @@ function Admin() {
         )}
 
         {/* Sidebar */}
-        <div 
-          className={`
-            ${isSidebarOpen ? 'w-64' : 'w-0'}
-            transition-all duration-300 ease-in-out
-            fixed md:static h-full
-            ${isMobile ? 'z-30' : 'z-10'}
-            overflow-hidden
-          `}
+        <div
+          className={`${
+            isSidebarOpen ? 'w-64' : 'w-0'
+          } transition-all duration-300 ease-in-out fixed md:static h-full ${
+            isMobile ? 'z-30' : 'z-10'
+          } overflow-hidden`}
         >
-          <Sidebar />
+          <Sidebar onNavigate={(view) => setCurrentView(view)} />
         </div>
 
         {/* Main Content */}
-        <div className={`
-          flex-1 flex flex-col overflow-hidden
-          transition-all duration-300
-          ${isSidebarOpen ? 'md:ml-0' : 'ml-0'}
-          ${isMobile ? 'w-full' : ''}
-        `}>
+        <div
+          className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 ${
+            isSidebarOpen ? 'md:ml-0' : 'ml-0'
+          } ${isMobile ? 'w-full' : ''}`}
+        >
           <AdminHeader toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-          <main className={`
-            flex-1 overflow-y-auto p-6
-            transition-all duration-300
-          `}>
-            <DashboardStats />
+          <main className="flex-1 overflow-y-auto p-6 transition-all duration-300">
+            {renderContent()}
           </main>
 
-          {/* <Footer/> */}
+          {/* <Footer /> */}
         </div>
       </div>
     </ThemeProvider>

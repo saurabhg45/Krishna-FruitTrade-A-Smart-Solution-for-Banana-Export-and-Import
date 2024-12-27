@@ -22,7 +22,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/products" className="text-white text-decoration-none">
+                <a href="/home" className="text-white text-decoration-none">
                   Products
                 </a>
               </li>
@@ -40,15 +40,15 @@ export function Footer() {
             <ul className="list-unstyled">
               <li className="d-flex align-items-center mb-2">
                 <Mail className="me-2" />
-                <span>info@freshhorizons.com</span>
+                <span>kfpmap@gmail.com</span>
               </li>
               <li className="d-flex align-items-center mb-2">
                 <Phone className="me-2" />
-                <span>+1 (555) 123-4567</span>
+                <span>9850001376 / 9168841376</span>
               </li>
               <li className="d-flex align-items-center">
                 <MapPin className="me-2" />
-                <span>123 Banana Street, Fruit City</span>
+                <span>708/709, Ap. Brahmanpuri, Ta. Shahada, Dist. Nandurbar (MH)</span>
               </li>
             </ul>
           </div>
