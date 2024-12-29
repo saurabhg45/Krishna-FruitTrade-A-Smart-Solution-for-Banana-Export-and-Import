@@ -29,6 +29,8 @@ const HeroSection = () => {
     groupedVarieties.push(varieties.slice(i, i + 2));
   }
 
+ 
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section with Carousel */}
@@ -175,6 +177,35 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
+
+      {/* Global Map */}
+      
+      {/* <section className="py-20 bg-[#001B3D]">
+      <div className="container mx-auto px-4">
+        
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold text-white mb-4">
+            Global Country Where We Export Bananas
+          </h3>
+        </div>
+
+        
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="relative">
+            <img
+              src="https://www.exportimportdata.in/content/images/export-import-countries.svg"
+              alt="Global Trade Data"
+              className="w-full"
+              style={{
+                filter: 'brightness(1.2)',
+                mixBlendMode: 'lighten',
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </section> */}
+
     </div>
   );
 };

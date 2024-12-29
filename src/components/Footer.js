@@ -27,6 +27,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/services" className="text-white text-decoration-none">
+                  Services
+                </a>
+              </li>
+              <li>
                 <a href="/contact" className="text-white text-decoration-none">
                   Contact
                 </a>
